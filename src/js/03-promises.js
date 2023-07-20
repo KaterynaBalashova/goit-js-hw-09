@@ -5,17 +5,17 @@ const inputDelay = document.querySelector('[name="delay"]');
 const inputStep = document.querySelector('[name="step"]');
 const inputAmound = document.querySelector('[name="amount"]');
 
-let delay = inputDelay.value;
-const stepValue = inputStep.value;
-const amountValue = inputAmound.value;
-
 form.addEventListener('submit', onSubmit);
 
 function onSubmit(event) {
   event.preventDefault();
 
+  let delay = Number(inputDelay.value);
+  const stepValue = Number(inputStep.value);
+  const amountValue = Number(inputAmound.value);
+  
   for (let position = 1; position <= amountValue; position += 1){
-  createPromise({ position, delay })
+  createPromise(position, delay)
   .then(({ position, delay }) => {
     Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
