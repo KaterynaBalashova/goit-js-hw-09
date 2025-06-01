@@ -68,7 +68,7 @@ const images = [
     ];
     
 
-const container = document.querySelector(".gallery-list");
+const container = document.querySelector(".gallery");
 
 container.insertAdjacentHTML("afterbegin", createMarkup(images));
 
@@ -87,7 +87,7 @@ function createMarkup(arr) {
     `).join("");
 };
 
-const lightbox = new SimpleLightbox('.gallery-list a', {
+const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',      // Брати підписи з атрибута alt
     captionPosition: 'bottom', // Розміщення підпису знизу
     captionDelay: 250,          // Затримка 250 мс
